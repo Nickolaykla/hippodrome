@@ -19,5 +19,8 @@ public class HorseTest {
                 assertThrows(IllegalArgumentException.class, () -> new Horse(name, 12.3, 123.1));
         assertEquals("Name cannot be blank.", exception.getMessage());
     }
+    @Test
+    void constructorSpeedParamCheck () {
 
+    }
 }
