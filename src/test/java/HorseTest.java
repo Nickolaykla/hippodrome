@@ -21,6 +21,15 @@ public class HorseTest {
     }
     @Test
     void constructorSpeedParamCheck () {
+        Throwable exception =
+                assertThrows(IllegalArgumentException.class, () -> new Horse("Cherry", -1, 123.1));
+        assertEquals("Speed cannot be negative.", exception.getMessage());
+    }
 
+    @Test
+    void constructorDistanceParamCheck () {
+        Throwable exception =
+                assertThrows(IllegalArgumentException.class, () -> new Horse("Cherry", 12.3, -123.1));
+        assertEquals("Distance cannot be negative.", exception.getMessage());
     }
 }
