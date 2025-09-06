@@ -1,8 +1,11 @@
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
 
 public class HippodromeTest {
 
@@ -34,5 +37,20 @@ public class HippodromeTest {
         );
         Hippodrome hippodrome = new Hippodrome(horses);
         assertEquals(horses, hippodrome.getHorses());
+    }
+
+    @Test
+    public void moveTest() {
+        List<Horse> horses = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            horses.add(mock(Horse.class));
+        }
+
+        Hippodrome hippodrome = new Hippodrome(horses);
+        hippodrome.move();
+
+        for (Horse horse : horses) {
+            Mockito.verify(horse).move();
+        }
     }
 }
