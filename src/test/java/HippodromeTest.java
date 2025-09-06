@@ -1,10 +1,8 @@
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class HippodromeTest {
 
@@ -20,6 +18,21 @@ public class HippodromeTest {
         assertEquals("Horses cannot be empty.", exception.getMessage());
     }
 
-
-
+    @Test
+    public void getHorsesTest() {
+        List<Horse> horses = List.of(
+                new Horse("1", 2.1), new Horse("2", 2.2), new Horse("3", 2.3),
+                new Horse("4", 2.4), new Horse("5", 2.5), new Horse("6", 2.6),
+                new Horse("7", 2.7), new Horse("8", 2.8), new Horse("9", 2.9),
+                new Horse("10", 2.1), new Horse("11", 2.2), new Horse("12", 2.3),
+                new Horse("13", 2.4), new Horse("14", 2.5), new Horse("15", 2.6),
+                new Horse("16", 2.7), new Horse("17", 2.8), new Horse("18", 2.9),
+                new Horse("19", 2.1), new Horse("20", 2.1), new Horse("21", 2.1),
+                new Horse("22", 2.1), new Horse("23", 2.1), new Horse("24", 2.1),
+                new Horse("25", 2.1), new Horse("26", 2.1), new Horse("27", 2.1),
+                new Horse("28", 2.1), new Horse("29", 2.1), new Horse("30", 2.1)
+        );
+        Hippodrome hippodrome = new Hippodrome(horses);
+        assertEquals(horses, hippodrome.getHorses());
+    }
 }
