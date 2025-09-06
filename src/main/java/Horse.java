@@ -1,6 +1,10 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import static java.util.Objects.isNull;
 
 public class Horse {
+    private static final Logger logger = LogManager.getLogger(Horse.class);
 
     private final String name;
     private final double speed;

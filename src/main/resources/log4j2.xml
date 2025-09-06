@@ -6,11 +6,7 @@
         </File>
     </Appenders>
     <Loggers>
-        <Logger name = "Main" level = "info" additivity = "true">
-            <AppenderRef ref = "File"/>
-        </Logger>
-
-    <Root level="error">
+    <Root level="debug">
         <AppenderRef ref="File"/>
     </Root>
    </Loggers>
