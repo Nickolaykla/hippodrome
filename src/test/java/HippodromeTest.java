@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,5 +53,14 @@ public class HippodromeTest {
         for (Horse horse : horses) {
             Mockito.verify(horse).move();
         }
+    }
+
+    @Test
+    public void getWinnerTest() {
+        Horse horse1 = new Horse("1", 2, 12);
+        Horse horse2 = new Horse("2", 3, 16);
+        List<Horse> horses = List.of(horse1, horse2);
+        Hippodrome hippodrome = new Hippodrome(horses);
+        assertSame(horse2, hippodrome.getWinner());
     }
 }
